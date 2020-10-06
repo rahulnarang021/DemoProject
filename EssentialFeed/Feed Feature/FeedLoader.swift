@@ -9,6 +9,7 @@
 import Foundation
 
 public typealias FeedLoaderResult = Result<[FeedItem], Error>
+
 public protocol FeedLoader {
     func load(completion: @escaping (FeedLoaderResult) -> Void)
 }
