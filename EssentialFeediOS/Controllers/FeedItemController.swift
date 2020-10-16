@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import EssentialFeed
 
 final class FeedItemController {
     

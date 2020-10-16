@@ -5,21 +5,6 @@ import EssentialFeediOS
 
 final class FeedViewControllerTests: XCTestCase {
     
-    func test_feedView_hasCorrectTitle() {
-        let (sut, _) = makeSUT()
-        sut.loadViewIfNeeded()
-        
-        XCTAssertEqual(sut.title, localizedString(for: "FEED_VIEW_TITLE"))
-    }
-    
-    func localizedString(for key: String, file: StaticString = #file, line: UInt8 = #line) -> String {
-        let bundle = Bundle(for: FeedViewController.self)
-        let value = NSLocalizedString(key, tableName: "Feed", bundle: bundle, comment: "FeedViewTitle value")
-        if(value == key) {
-            XCTFail("Key:\(key) should not be equal to value:\(value)")
-        }
-        return value
-    }
     
     func test_loadFeedActions_requestFeedFromLoader() {
         let (sut, loader) = makeSUT()

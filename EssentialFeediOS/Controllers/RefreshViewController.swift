@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EssentialFeed
 
 protocol FeedLoadPresenter {
     func load()
