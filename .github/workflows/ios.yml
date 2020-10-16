@@ -1,14 +1,11 @@
 name: iOS starter workflow
-
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
   build:
-  runs-on: [macos-latest]
+  runs-on: macos-latest
   env:
     XC_VERSION: ${{ '11.6' }}
     XC_WORKSPACE: ${{ 'EssentialFeed.xcworkspace' }}
