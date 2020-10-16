@@ -2,17 +2,16 @@ name: iOS starter workflow
 on:
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
-  runs-on: macos-latest
-  env:
-    XC_VERSION: ${{ '11.6' }}
-    XC_WORKSPACE: ${{ 'EssentialFeed.xcworkspace' }}
-    XC_SCHEME: ${{ 'EssentialFeedIntegrationTests' }}
-  steps:
-  - name: Select latest Xcode
-    run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
-  - uses: actions/checkout@v2
-  - name: Run Unit and UI Tests
-    run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11'
+    runs-on: [macos-latest]
+    env:
+      XC_VERSION: ${{ '11.6' }}
+      XC_WORKSPACE: ${{ 'EssentialFeed.xcworkspace' }}
+      XC_SCHEME: ${{ 'EssentialFeedIntegrationTests' }}
+    steps:
+        - name: Select latest Xcode
+          run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+        - uses: actions/checkout@v2
+        - name: Run Unit and UI Tests
+          run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11'
