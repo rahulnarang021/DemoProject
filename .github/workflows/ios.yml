@@ -7,7 +7,7 @@ jobs:
     runs-on: [macos-latest]
     env:
       XC_VERSION: ${{ '11.6' }}
-      XC_WORKSPACE: ${{ 'EssentialFeed.xcworkspace' }}
+      XC_WORKSPACE: ${{ 'EssentialFeed.xcodeproj' }}
       XC_SCHEME: ${{ 'EssentialFeedIntegrationTests' }}
     steps:
         - name: Select latest Xcode
