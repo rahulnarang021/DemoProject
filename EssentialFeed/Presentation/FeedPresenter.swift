@@ -48,4 +48,5 @@ public class FeedPresenter {
     public func didLoadFeed(feeds: [FeedItem]) {
         self.feedView.loadFeed(withFeed: feeds)
     }
+    
 }
